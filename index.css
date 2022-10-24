@@ -6,17 +6,13 @@
 	font-family: "Poppins", sans-serif;
 }
 
-body {
-    display: flex;
-    height: 100vh;
-}
-
-.container {
-	width: 90%;
-	max-width: 1200px;
-    display: block;
-    justify-content: center;
-    align-items: center;
+@media screen and (max-width: 480px)  {
+    .container {
+        width: 100%;
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 img {
@@ -24,42 +20,89 @@ img {
     height: auto;
 }
 
+@media screen and (max-width: 480px) {
+    img {
+        width: 150px;
+        justify-items: center;
+    }
+}
+
+img {
+    height: auto;
+    max-width: 200px;
+}
+
+.logo-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 480px) {
+    .logo-wrapper {
+        width: 50%;
+        justify-content: center;
+    }
+}
 
 .logo {
     display: flex;
-    align-items: center;
-    margin-top: 50px;
-    margin-left: 350px;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 170px;
+    }
 }
 
 .form-wrapper{
-    margin-left: 380px;
+    margin: 0 auto;
+    width: 40%;
     max-height: 100vh;
     margin-top: 50px;
     box-sizing: border-box;
     padding: 20px;
     border-radius: 1rem;
     background-color: hsl(0, 0%, 100%);
-    border: 4px solid  rgb(144, 144, 255);; 
+    border: 4px solid  rgb(144, 144, 255);
     grid-template-columns: 1fr 1fr;
     gap: 0;
 }
 
+@media screen and (max-width: 480px) {
+    .form-wrapper {
+        margin-left: 100px;
+        max-height: 500px;
+        border: none
+    }
+}
 
 
 .name-email {
     display: flex;
     align-items: center;
+    gap: 10px;
     justify-content: space-around;
     font-size: medium;
     font-weight: 500;
     font-size: larger;
 }
 
+@media screen and (max-width: 480px) {
+    .name-email {
+        width: 150%;
+        display: block;
+        justify-content: left;
+        font-size: 18px;
+    }
+}
+
 #name input{
-    display: flex;
-  
-    
+    display: flex;  
 }
 
 .name-email input {
@@ -76,9 +119,24 @@ img {
     color: blueviolet;    
 }
 
+@media screen and (max-width: 480px) {
+    .name-email .input-field {
+        margin-top: 20px;
+    }
+}
+
 .phn {
+    width: 100%;
     margin-top: 20px;
-    margin-left: 50px;
+}
+
+@media screen and (max-width: 480px) {
+    .phn {
+        width: 150%;
+        margin-left: 0px;
+        font-size: 16px;
+        
+    }
 }
 
 .phn .details {
@@ -92,18 +150,33 @@ img {
 }
 
 .phn input {
-    width: 93%;
+    width: 100%;
     font: 1.25rem;
     padding: 0.5rem 0.75rem;
     margin-top: 5px;
 }
 
+@media screen and (max-width: 480px) {
+    .phn input {
+        width: 100%;
+    }
+}
+
+
 .height-weight {
+    gap: 10px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 20px;
-    
+    margin-top: 20px;   
+}
+
+@media screen and (max-width: 480px) {
+    .height-weight {
+        display: block;
+        font-size: 16px;
+        width: 100%;
+    }
 }
 .height-weight .details {
     font-weight: 500;
@@ -116,17 +189,142 @@ img {
     padding: 0.5rem 0.75rem ;
 }
 
+
 .height-weight .input-field input {
+
     margin-top: 5px;
 
 }
 
-.input-field ::placeholder {
-    text-align: right;
+.height-weight .input-field {
+    position: relative;
+}
+
+@media screen and (max-width: 480px) {
+    .height-weight .input-field {
+        margin-top: 20px;
+    }
+}
+
+.name-email .error {
+    color: red;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    margin-top: 0;
+}
+
+.phn .error {
+    color: red;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    margin-top: 0;
+}
+
+.age-gender .error {
+    color: red;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    margin-top: 0;
+}
+
+@media screen and (max-width: 480px) {
+    .age-gender {
+        width: 150%;
+        display: block;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .age-gender .input-field {
+        margin-top: 20px;
+    }
+}
+
+.height-weight .error {
+    color: red;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    margin-top: 2px;
+    letter-spacing: 0.1px;
+}
+
+@media screen and (max-width: 480px) {
+    .height-weight{
+        width: 150%;
+    }
+}
+
+span {
+    position: absolute;
+    display: flex;
+    top: 40px;
+    justify-content: end;
+    right: 15px;
     opacity: 2.6;
     color: black;
-    font-size: 1.2rem;
+    font-size: 1.2rem;    
 }
+
+@media screen and (max-width: 480px) {
+    span {
+        top: 40px;
+    }
+}
+
+
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.age-gender {
+    gap: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;   
+}
+
+.age-gender .details {
+    font-weight: 500;
+    font-size: larger;
+}
+
+.age-gender input {
+    width: 100%;
+    font: 1.28rem;
+    padding: 0.5rem 0.75rem ;
+}
+
+
+.age-gender input {
+    margin-top: 5px;
+}
+
+input[type=text] {
+    color: black;
+}
+
+input[type=number] {
+    color: black;
+}
+
+@media screen and (max-width: 480px) {
+    .age-gender {
+        display: block;
+        font-size: 18px;
+    }
+}
+
 
 .register {
     display: flex;
@@ -135,6 +333,14 @@ img {
     margin-top: 50px;    
 }
 
+@media screen and (max-width: 480px) {
+    .register {
+        width: 146%;
+        margin-top: 25px;
+        padding: 5px;   
+    }
+} 
+
 .register button { 
     font-family: "Poppins", sans-serif;
     letter-spacing: 1.5px; 
@@ -142,30 +348,46 @@ img {
     font-weight: 200;
     font-size: medium;
     background-color: #fff;
-    border-style: none;
-    border-bottom-style: none;
 }
+
+@media screen and (max-width: 480px) {
+    .register button {
+        width: 50%;
+        padding: 5px;   
+    }
+} 
 
 .register button .btn {
     color: black;
-    font-size: 50px;
-    font-weight: 500;
-    border-style: none;
-    border-bottom-style: none;
+    font-size: 20px;
+    font-weight: 600;
 }
 
-.register button .btn a { 
-    border-style: none;
-    border-bottom-style: none;
-}  
+@media screen and (max-width: 480px) {
+    .register button .btn {
+        font-size: 20px;
+        font-weight: 600;
+    }
+}
 
-
+a {
+    text-decoration: none !important;
+  }
 
 .result {
     margin-top: 20px;
     font-family: "Poppins", sans-serif;
     color: black;
     margin-left: 600px;
+}
+
+@media screen and (max-width: 480px) {
+    .result p {
+        margin-top: 10px;
+        margin-right: 0;
+        font-size: small;
+    }
+   
 }
 
 .result p {
